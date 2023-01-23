@@ -662,7 +662,7 @@ ShaderInfo ShaderSource::generateShader(const std::string &name,
 		)";
 	} else {
 		shaders_header << R"(
-			#version 120
+			#version 130
 			#define lowp
 			#define mediump
 			#define highp
