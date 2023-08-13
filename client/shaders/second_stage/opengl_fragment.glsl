@@ -1,5 +1,6 @@
 #define rendered texture0
 #define bloom texture1
+#define normal texture3
 
 struct ExposureParams {
 	float compensationFactor;
@@ -7,6 +8,7 @@ struct ExposureParams {
 
 uniform sampler2D rendered;
 uniform sampler2D bloom;
+uniform sampler2D normal;
 
 uniform vec2 texelSize0;
 
@@ -124,6 +126,8 @@ void main(void)
 
 	// return to sRGB colorspace (approximate)
 	color.rgb = pow(color.rgb, vec3(1.0 / 2.2));
+
+	vec4 normal = texture2D(normal, uv);
 
 	gl_FragColor = vec4(color.rgb, 1.0); // force full alpha to avoid holes in the image.
 }
