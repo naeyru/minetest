@@ -127,7 +127,5 @@ void main(void)
 	// return to sRGB colorspace (approximate)
 	color.rgb = pow(color.rgb, vec3(1.0 / 2.2));
 
-	vec4 normal = texture2D(normal, uv);
-
 	gl_FragColor = vec4(color.rgb, 1.0); // force full alpha to avoid holes in the image.
 }
