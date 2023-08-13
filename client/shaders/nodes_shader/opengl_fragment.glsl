@@ -452,4 +452,5 @@ void main(void)
 	col = vec4(col.rgb, base.a);
 
 	gl_FragData[0] = col;
+	gl_FragData[1] = vec4(vNormal, base.a);
 }
